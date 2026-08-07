@@ -6,12 +6,13 @@ const productRoutes=require("./routes/productRoutes");
 
 const taskRoutes=require("./routes/TaskRoutes");
 
+require("dotenv").config();
 const app=express();
 
 app.use(express.json());
 
 
-mongoose.connect("mongodb+srv://harimylapilli007_db_user:JmQmuoXxxWoOl1qk@cluster0.3d6nv5c.mongodb.net/");
+mongoose.connect(process.env.MongoDB_URI);
 
 app.use("/api/products",productRoutes);
 
